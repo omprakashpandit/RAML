@@ -1,0 +1,159 @@
+#%RAML 1.0
+title: product-service-api
+version: 1.0
+
+
+/products:
+  get:
+      description: this api retrieve product details
+      responses:
+        "200":
+          body:
+            application/json:
+              example: |
+                [
+                  {
+                    "productName" : "Laptop",
+                    "productId" : 100,
+                    "productType" : "Electronics",
+                    "price" : 100,
+                    "underWarranty": true,
+                    "manufactureDetails": {
+                        "companyName" : "zap",
+                        "manufactoryDate" : "20-11-1980",
+                        "companyLocation" : "New Delhi"
+                    }
+                  }
+              
+                ]
+
+  /{productId}:
+     get:
+      description: this api get product by id
+      responses:
+        "200":
+          body:
+            application/json:
+              example: |
+                {
+                  "productName" : "Laptop",
+                  "productId" : 200,
+                  "productType" : "Electronics",
+                  "price" : 100,
+                  "underWarranty": true,
+                  "manufactureDetails": 
+                  {
+                    "companyName" : "zap",
+                    "manufactoryDate" : "20-11-1980",
+                    "companyLocation" : "New Delhi"
+                  }
+                }
+                
+
+  /deleteProduct:
+    delete:
+      queryParameters:
+        productId:
+          type: integer
+          required: true
+      responses: 
+        200:
+          body:
+            application/json:
+              example:
+                message: "product is deleted successfully"
+  /create:
+    post:
+      description: this is used to insert
+      body:
+        application/json:
+          example: |
+            {
+                  "productName" : "Desktop",
+                  "productId" : 300,
+                  "productType" : "Electronics",
+                  "price" : 200,
+                  "underWarranty": true,
+                  "manufactureDetails": 
+                  {
+                    "companyName" : "zap infotech",
+                    "manufactoryDate" : "20-11-1980",
+                    "companyLocation" : "Pune"
+                  }
+            }
+      responses: 
+        201:
+          body:
+            application/json:
+              example:
+                message: product Added successfully
+
+  /update:
+    put:
+      description: this api used for update
+      body:
+        application/json:
+          example: |
+            {
+                  "productName" : "Laptop",
+                  "productId" : 100,
+                  "productType" : "Electronics",
+                  "price" : 100,
+                  "underWarranty": true,
+                  "manufactureDetails": 
+                  {
+                    "companyName" : "zap",
+                    "manufactoryDate" : "20-11-1980",
+                    "companyLocation" : "New Delhi"
+                  }
+            }
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                message : product is updated successfully
+
+  /addProduct:
+    post:
+      body:
+        application/json:
+          example:
+            {
+                  "productName" : "Laptop",
+                  "productId" : 100,
+                  "productType" : "Electronics",
+                  "price" : 100,
+                  "underWarranty": true,
+                  "manufactureDetails": 
+                  {
+                    "companyName" : "zap",
+                    "manufactoryDate" : "20-11-1980",
+                    "companyLocation" : "New Delhi"
+                  }
+            }
+      responses:
+        500:
+          body:
+            application/json:
+              example:
+                message: Error Adding product details.
+
+                        
+        
+              
+
+            
+
+
+          
+            
+                        
+                
+              
+
+
+
+                  
+
+
