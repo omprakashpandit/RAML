@@ -1,0 +1,13 @@
+First on Github create repository:- spring-mvc-raml
+------------------------------------COMMAND(Push into GitHub)-------------------------------------------
+Jump into Project directory:- E:\GitHubRepository\spring-mvc-raml
+OM PRAKASH@DESKTOP-MDBEG5T MINGW64 /d/GitHubRepository
+$ git init
+$ git status
+$ git add *
+$ git config --global user.email omprakashpandit@yahoo.co.in
+$ git config --global user.name omprakashpandit
+$ git commit -m "First Commit"
+$ git remote add origin https://github.com/omprakashpandit/spring-mvc-raml.git
+$ git branch -M master
+$ git push -u origin master
